@@ -1,0 +1,8 @@
+#METIS grism specifications
+#S. Kendrew, Sep 09
+
+#lmin(um)  lmax(um)  2pxRP  
+2.8        5.2       1700
+3.4        4.2       4750
+4.4        5.6       4260
+8.0        14.0       940

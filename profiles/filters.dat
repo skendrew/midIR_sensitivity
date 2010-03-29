@@ -1,0 +1,7 @@
+# Few filter definitions for METIS imager sensitivity calcs
+# 29/11/08
+#Name	lambda_c[um]	FWHM[um]
+L	3.78		0.58
+M	4.66		0.1
+N2	10.7		1.4
+Q1	17.65		0.83
