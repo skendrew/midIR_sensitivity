@@ -1,0 +1,89 @@
+MIDIR_SENSITIVITY REPOSITORY
+****************************
+
+What is it?
+-----------
+This repository contains idl code to calculate the sensitivity of a ground-based mid-infrared instrument for astronomy. The code was written during 2008-2009 for the Phase A study of the instrument METIS, the Mid-Infrared E-ELT Imager and Spectrograph, for the 42-m European Extremely Large Telescope. The code and all input parameters are highly tailored for the particular design parameters of the E-ELT and METIS, however, the programme is structured in such a way that the parameters can easily be adjusted for a different system, or alternative input files used.
+
+Basic features of the E-ELT and METIS are:
+- a 42-m aperture
+- wavelength coverage: 3-14 micron (L, M and N bands)
+- a ground-based telescope, i.e. contributions from atmospheric radiance and a strong thermal background from the telescope
+- adaptive optics for atmospheric turbulence correction using either single conjugate natural guide star AO (aomode='scao') or laser guide star tomographic AO (aomode='ltao')
+- instrument performance is assumed to be thermal background-limited at all wavelengths, in all modes. The METIS instrument is cryogenically cooled to achieve this
+- two sites are considered according to the info provided by ESO at 
+
+What is it not?
+---------------
+- the code does not generate synthetic images of spectra
+- no coronagraphic or polarimetric observing modes
+- no specific detector readout schemes or subarrays
+
+
+Contents
+--------
+The package contains 3 key files for sensitivity calculations in METIS' 3 main modes of observation:
+1.  metis_img_sn.pro -> 	Imager mode
+- Imager specific parameter file: metis_sens_img_param.pro
+
+2. metis_lres_sn.pro ->	Low-resolution long-slit spectroscopy mode (R~1000-3000)
+- low-res spectroscopy specific parameter file: metis_sens_img_param.pro (same as for imager)
+
+3. metis_ifu_sn.pro -> 	High-resolution integral field spectroscopy (R~100,000 in LM, 50,000 in N band; image slicer design)
+- IF spectrosocpy specific parameter file: metis_sens_ifu_param.pro
+
+More parameter files:
+- metis_sens_param.pro:	general input parameters related to telescope and atmosphere. Contains parameters for setting file locations to be adjusted for your own system
+- metis_pre_param.pro: input parameters related to the pre-optics of METIS
+- atm/paranal_*.dat: atmospheric profile files for a Paranal-like site, containing both transmission and radiance info. Profiles have been pre-convolved to resolutions appropriate for the different modes of observation: 100 for imaging, 3000 for slit spectroscopy, 50000 for N band IFU spectrosocpy and 100000 for LM-band IFU spectroscopy
+- atm/high_and_dry_*.dat:	dito Paranal for a high & dry site at 5000 m
+- ee_files/:				this folder contains 2 lookup tables for AO-corrected encircled energies. (i) EnsquaredEnergy_AO_LMN_V10.dat is for single conjugate AO and is calculated with AO simulation tool PAOLA. Please refer to the tech note by Kendrew for detailed input details; (ii) atlas_eeav.dat is the same for the laser tomography AO mode, provided by the team designing the LTAO module for E-ELT at ONERA, France. These values are encircled energies instead of ensquared, so take care to compare. See tech note for more info.
+- profiles/: contains a number of input files loosely grouped for being "profiles" of sorts. 
+-> bandic_prof.dat: input for calculation of the transmission profile of the dichroic that splits LM and N band radiation
+-> filters.dat:	filter transmission details for imager mode
+-> grisms.dat: grisms info for low-resolution spectroscopy
+-> metis_ifures_lm.dat:	resolving power info for the LM band IFU spectrograph based on the METIS optical design
+-> metis_ifures_n.dat: dito N band
+-> znse_abs.dat: absorption profile for a ZnSe window - required for calculating the instrument throughput
+-> znse_trans.dat: dito transmission profile
+
+Auxiliary functions:
+- metis_bandic.pro: calculates the transmission profile of the band-splitting dichroic
+- metis_dqe.pro: calculates the detector quantum efficiency. This is pretty much hard-coded in, not much actual calculation, but based on realistic manufacturers' values
+- metis_thru.pro: calculates throughput of the instrument for any of the modes
+- metis_wfsdic.pro: calculates the transmission profile of the dichroic that splits the incoming beam between the wavefront sensor unit (~< 1. micron) and the instrument.
+- metis_winbgr.pro: calculates the thermal background from the ZnSe entrance window.
+
+
+Requirements
+------------
+
+This code was written using IDL 7.0 under Windows XP and should be compatible with most reasonably current versions of IDL. I've also used it regularly under linux, which requires some minor modifications to the directory structure. The input directories are specified in the metis_sens_param.pro file.
+
+
+Who wrote it?
+-------------
+This code was written by Sarah Kendrew, Postdoc in Astronomy Instrumentation at Leiden Observatory, PO Box 9513, 2300 RA Leiden, during 2008-2009. For more info, you can contact me on sarahaskendrew@gmail.com.
+
+Acknowledgment
+--------------
+If you use this code, either for METIS-specific calculations or for your own project, please cite:
+Kendrew et al.,  Proc. SPIE, in preparation(2010)
+-- this paper will be presented at SPIE San Diego 2010 so I'll update the reference asap.
+
+If you use the code extensively, I'd like to hear about it and would appreciate being added as a co-author to any resulting publications.
+
+Further reading
+---------------
+A detailed description of the calculation method, inputs and results for METIS are in the tech note in the repository by Kendrew, 2009. The calculation method is based on that of the E-ELT exposure time calculator provided by ESO, albeit with quite different inputs, freely available via the ESO E-ELT Design Reference Mission:
+http://www.eso.org/sci/facilities/eelt/science/drm/cases.html. 
+
+The atmospheric profiles are also available on these pages, at R~100,000.
+
+For more information about the METIS instrument and project, see http://www.strw.leidenuniv.nl/metis.
+
+License
+-------
+
+
+--- Sarah Kendrew, 29 March 2010
