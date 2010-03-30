@@ -323,7 +323,7 @@ if keyword_set(extended) then begin
   endelse
 endif else begin
   print, 'sensitivity at s/n 10 in 1 hr = ', minsig[line]*1000., ' microJy'
-   print, 'line sensitivity at s/n 10 in 1 hr = ', minsig_line[line]*1d19, '*1d-19 W/m2/arcsec^2'
+   print, 'line sensitivity at s/n 10 in 1 hr = ', minsig_line[line]*1d19, '*1d-19 W/m2'
 endelse
 
 

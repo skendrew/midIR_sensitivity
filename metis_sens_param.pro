@@ -4,7 +4,7 @@
 ;instrument parameters moved to metis_sen_img_param and metis_sens_ifu_param.pro
 
 ; file locations
-def_dir='c:/metis/code_public/'
+def_dir='c:/metis/midIR_sensitivity/'
 atm_dir=def_dir+'atm/'      ; location of atmospehric profiles
 ee_dir=def_dir+'ee_files/'  ; location of encircled energy tables
 profiles_dir=def_dir+'profiles/'  ; location of miscellaneous input data, mainly optical profiles e.g. throughputs, resolutions etc

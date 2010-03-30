@@ -3,7 +3,7 @@ MIDIR_SENSITIVITY REPOSITORY
 
 What is it?
 -----------
-This repository contains idl code to calculate the sensitivity of a ground-based mid-infrared instrument for astronomy. The code was written during 2008-2009 for the Phase A study of the instrument METIS, the Mid-Infrared E-ELT Imager and Spectrograph, for the 42-m European Extremely Large Telescope. The code and all input parameters are highly tailored for the particular design parameters of the E-ELT and METIS, however, the programme is structured in such a way that the parameters can easily be adjusted for a different system, or alternative input files used.
+This repository contains idl code to calculate the sensitivity of a ground-based mid-infrared instrument for astronomy. The code was written during 2008-2009 for the Phase A study of the instrument METIS (http://www.strw.leidenuniv.nl/metis), the Mid-Infrared E-ELT Imager and Spectrograph, for the 42-m European Extremely Large Telescope. The code and all input parameters are highly tailored for the particular design parameters of the E-ELT and METIS, however, the programme is structured in such a way that the parameters can easily be adjusted for a different system, or alternative input files used.
 
 Basic features of the E-ELT and METIS are:
 - a 42-m aperture
@@ -32,13 +32,23 @@ The package contains 3 key files for sensitivity calculations in METIS' 3 main m
 3. metis_ifu_sn.pro -> 	High-resolution integral field spectroscopy (R~100,000 in LM, 50,000 in N band; image slicer design)
 - IF spectrosocpy specific parameter file: metis_sens_ifu_param.pro
 
-More parameter files:
+
+Dependencies
+------------
+
+Parameter files:
 - metis_sens_param.pro:	general input parameters related to telescope and atmosphere. Contains parameters for setting file locations to be adjusted for your own system
 - metis_pre_param.pro: input parameters related to the pre-optics of METIS
-- atm/paranal_*.dat: atmospheric profile files for a Paranal-like site, containing both transmission and radiance info. Profiles have been pre-convolved to resolutions appropriate for the different modes of observation: 100 for imaging, 3000 for slit spectroscopy, 50000 for N band IFU spectrosocpy and 100000 for LM-band IFU spectroscopy
-- atm/high_and_dry_*.dat:	dito Paranal for a high & dry site at 5000 m
-- ee_files/:				this folder contains 2 lookup tables for AO-corrected encircled energies. (i) EnsquaredEnergy_AO_LMN_V10.dat is for single conjugate AO and is calculated with AO simulation tool PAOLA. Please refer to the tech note by Kendrew for detailed input details; (ii) atlas_eeav.dat is the same for the laser tomography AO mode, provided by the team designing the LTAO module for E-ELT at ONERA, France. These values are encircled energies instead of ensquared, so take care to compare. See tech note for more info.
-- profiles/: contains a number of input files loosely grouped for being "profiles" of sorts. 
+
+Atmospheric profiles:
+- atm/paranal_*.dat: atmospheric profile files for a Paranal-like site, containing both transmission and radiance info. Profiles have been pre-convolved to resolutions appropriate for the different modes of observation: 100 for imaging, 3000 for slit spectroscopy, 50000 for N band IFU spectroscopy and 100000 for LM-band IFU spectroscopy
+- atm/high_and_dry_*.dat: dito Paranal for a high & dry site at 5000 m
+
+Encircled energy lookup tables:
+- ee_files/: this folder contains 2 lookup tables for AO-corrected encircled energies. (i) EnsquaredEnergy_AO_LMN_V10.dat is for single conjugate AO and is calculated with AO simulation tool PAOLA. Please refer to the tech note by Kendrew for detailed input details; (ii) atlas_eeav.dat is the same for the laser tomography AO mode, provided by the team designing the LTAO module for E-ELT at ONERA, France. These values are encircled energies instead of ensquared, so take care to compare. See tech note for more info.
+
+Profiles:
+The profiles/ folder contains a number of input files loosely grouped for being "profiles" of sorts. 
 -> bandic_prof.dat: input for calculation of the transmission profile of the dichroic that splits LM and N band radiation
 -> filters.dat:	filter transmission details for imager mode
 -> grisms.dat: grisms info for low-resolution spectroscopy
@@ -57,8 +67,10 @@ Auxiliary functions:
 
 Requirements
 ------------
+This code was written using IDL 7.0 under Windows XP SP3 and should be compatible with most reasonably current versions of IDL. I've also used it regularly under linux, which requires some minor modifications to the directory structure. The input directories are specified in the metis_sens_param.pro file.
 
-This code was written using IDL 7.0 under Windows XP and should be compatible with most reasonably current versions of IDL. I've also used it regularly under linux, which requires some minor modifications to the directory structure. The input directories are specified in the metis_sens_param.pro file.
+The IDL Astronomy Library is referenced throughout - you can download it here: 
+http://idlastro.gsfc.nasa.gov/ftp/
 
 
 Who wrote it?
@@ -68,7 +80,7 @@ This code was written by Sarah Kendrew, Postdoc in Astronomy Instrumentation at 
 Acknowledgment
 --------------
 If you use this code, either for METIS-specific calculations or for your own project, please cite:
-Kendrew et al.,  Proc. SPIE, in preparation(2010)
+Kendrew et al.,  Proc. SPIE, in preparation (2010)
 -- this paper will be presented at SPIE San Diego 2010 so I'll update the reference asap.
 
 If you use the code extensively, I'd like to hear about it and would appreciate being added as a co-author to any resulting publications.

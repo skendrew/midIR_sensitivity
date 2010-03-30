@@ -247,8 +247,6 @@ print, 'mean throughput of instrument = ', mean(thru)
 dqe=metis_dqe(l, band)
 print, 'mean DQE in filter band = ', mean(dqe)
 
-plot, l, dqe
-
 ; calculate efficiency
 eff=mean(thru)*tel_thru*mean(dqe)*pcg
 print, 'total efficiency including DQE, pcg, telescope, and instrument = ', eff

@@ -163,7 +163,6 @@ endif
 print, 'Atmosphere data read'
 
 ;perform some unit conversions on the emissivity values (from photons/s/um/m^2/arcsec^2 to W/cm^2/sr/um)
-;em=em*(h*c/l)*4.25d10. UNITS WOMAN, UNITS! PAY ATTENTION!
 em_l=em*(h*c/(l*1d-6))*1d-4*4.25d10
 
 ; clip these arrays to wavelength range of interest

@@ -1,5 +1,5 @@
 
-;pro metis_sens_ifu_param
+;pro metis_ifu_param
 ;parameters file for sensitivity calculations
 ;
 ;provisional temperatures

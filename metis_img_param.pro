@@ -1,5 +1,5 @@
 
-;pro metis_sens_img_param
+;pro metis_img_param
 ;parameters file for sensitivity calculations for the IMAGER
 
 ;

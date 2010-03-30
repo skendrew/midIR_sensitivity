@@ -16,19 +16,15 @@ function metis_thru, mode, band, x, POL=pol
 ;************************************
 ;*CONSTANTS                         *
 ;************************************
-;pre_surf=9      ;no. of reflective optics in the pre-optics
-;pre_ref=0.99    ;reflectivity per pre-optics mirror
-;pre_thru=pre_ref^pre_surf
-;ar_factor=1.3
-;thru=1.
+
 
 ;wollaston_thru=0.9      ; throughput of the wollaston prism in METIS
 
 ; CONSTANTS ALL READ IN VIA PARAMETER FILES
 @metis_sens_param
 @metis_pre_param
-@metis_thermal_ifu_param
-@metis_thermal_img_param
+@metis_ifu_param
+@metis_img_param
 
 ;**********************************************************************
 ;* WINDOW TRANSMISSION CURVE  also used for prism transmission for IFU*
