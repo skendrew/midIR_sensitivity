@@ -32,6 +32,9 @@ The package contains 3 key files for sensitivity calculations in METIS' 3 main m
 3. metis_ifu_sn.pro -> 	High-resolution integral field spectroscopy (R~100,000 in LM, 50,000 in N band; image slicer design)
 - IF spectrosocpy specific parameter file: metis_sens_ifu_param.pro
 
+Zip files
+---------
+There are three zip files which each contain all the files you need for  a particular mode of observation, as above.
 
 Dependencies
 ------------
