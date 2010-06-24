@@ -78,13 +78,12 @@ http://idlastro.gsfc.nasa.gov/ftp/
 
 Who wrote it?
 -------------
-This code was written by Sarah Kendrew, Postdoc in Astronomy Instrumentation at Leiden Observatory, PO Box 9513, 2300 RA Leiden, during 2008-2009. For more info, you can contact me on sarahaskendrew@gmail.com.
+This code was written by Sarah Kendrew, Postdoc in Astronomy Instrumentation at Leiden Observatory, PO Box 9513, 2300 RA Leiden, during 2008-2009. For more info, you can contact me on sarahaskendrew AT gmail.com.
 
 Acknowledgment
 --------------
 If you use this code, either for METIS-specific calculations or for your own project, please cite:
-Kendrew et al.,  Proc. SPIE, in preparation (2010)
--- this paper will be presented at SPIE San Diego 2010 so I'll update the reference asap.
+Kendrew et al.,  Mid-infrared astronomy with the E-ELT: Performance of METIS, Proc. SPIE vol. 7735, in press (2010).
 
 If you use the code extensively, I'd like to hear about it and would appreciate being added as a co-author to any resulting publications.
 
