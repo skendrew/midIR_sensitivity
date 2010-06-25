@@ -77,13 +77,8 @@ http://idlastro.gsfc.nasa.gov/ftp/
 
 
 Who wrote it?
-<<<<<<< HEAD
 -------------
 This code was written by Sarah Kendrew, Postdoc in Astronomy Instrumentation at Leiden Observatory, PO Box 9513, 2300 RA Leiden, during 2008-2009. For more info, you can contact me on sarahaskendrew AT gmail.com.
-=======
--------------------
-This code was written by Sarah Kendrew, Postdoc in Astronomy Instrumentation at Leiden Observatory, PO Box 9513, 2300 RA Leiden, during 2008-2009. For more info, you can contact me on sarahaskendrew@gmail.com.
->>>>>>> f633e446832449e16150b595bd74f1077262711d
 
 Referencing
 ----------------
@@ -94,8 +89,7 @@ If you use the code extensively, I'd like to hear about it and would appreciate 
 
 Further reading
 -------------------
-A detailed description of the calculation method, inputs and results for METIS are in the tech note in the repository by Kendrew, 2009. The calculation method is based on that of the E-ELT exposure time calculator provided by ESO, albeit with quite different inputs, freely available via the ESO E-ELT Design Reference Mission:
-http://www.eso.org/sci/facilities/eelt/science/drm/cases.html. 
+A detailed description of the calculation method, inputs and results for METIS are in the tech note in the repository by Kendrew, 2009. The calculation method is based on that of the E-ELT exposure time calculator provided by ESO, albeit with quite different inputs, freely available via the ESO E-ELT Design Reference Mission: http://www.eso.org/sci/facilities/eelt/science/drm/cases.html. 
 
 The atmospheric profiles are also available on these pages, at R~100,000.
 
