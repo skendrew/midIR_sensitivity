@@ -155,6 +155,7 @@ endif else if site EQ 'high' then begin
   tel_t=270.0d
   name='high_and_dry'
 endif
+
 if not keyword_set(silent) then begin
   print, 'atmosphere data read'
 endif
@@ -202,15 +203,17 @@ endif else sn_size=npix*(pix_scale*1d-3)^2
 
 print, 'size of s/n area = ', sn_size, ' arcsec^2'
 
+
+
 ;look up EE using appropriate AO mode
 if keyword_set(extended) then begin
   if keyword_set(rh) then ee=0.5 else ee=1. 
 endif else begin
   if aomode eq 'ltao' then begin
-    ee_file='ee_files/atlas_eeav.dat' 
+    ee_file=ee_dir+'atlas_eeav.dat' 
     readcol, ee_file, f='f,d,d,d', ee_snsize, ee_l, ee_m, ee_n, /silent
   endif else begin    
-    ee_file='ee_files/EnsquaredEnergy_AO_LMN_V10.dat'
+    ee_file=ee_dir+'EnsquaredEnergy_AO_LMN_V10.dat'
     readcol, ee_file, format='f,d,d,d', ee_snsize, ee_l, ee_m, ee_n, /silent
   endelse
   

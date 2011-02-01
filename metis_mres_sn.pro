@@ -223,10 +223,10 @@ if keyword_set(extended) then begin
   if keyword_set(rh) then ee=0.5 else ee=1. 
 endif else begin
   if aomode eq 'ltao' then begin
-    ee_file='ee_files/atlas_eeav.dat'
+    ee_file=ee_dir+'ee_files/atlas_eeav.dat'
     readcol, ee_file, f='f,d,d,d', ee_snsize, ee_l, ee_m, ee_n, /silent
   endif else begin    
-    ee_file='ee_files/EnsquaredEnergy_AO_LMN_V10.dat'
+    ee_file=ee_dir+'EnsquaredEnergy_AO_LMN_V10.dat'
     readcol, ee_file, format='f,d,d,d', ee_snsize, ee_l, ee_m, ee_n, /silent
   endelse
   
